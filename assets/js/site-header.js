@@ -12,6 +12,7 @@
     <nav class="site-nav" aria-label="Main navigation">
       <a href="/">Home</a>
       <a href="/bifrost/">Bifrost</a>
+      <a href="/about/">About</a>
       <a href="/contact/">Contact</a>
     </nav>
   `;
