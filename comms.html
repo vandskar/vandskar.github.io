@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f2">
+  <title>Bifrost AI communications · Vandskar</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/site-header.js" defer></script>
+  <script src="/static/signal.js" defer></script>
+  <script src="/static/app.js" defer></script>
+</head>
+<body class="page-comms">
+  <header class="site-header" data-shared-header></header>
+
+  <main class="page-width console-shell">
+    <div class="console-heading">
+      <h1>Bifrost communications</h1>
+      <div class="connection-state" aria-label="AI connection mode">
+        <span class="state-dot" aria-hidden="true"></span>
+        <strong id="system-mode">Connecting</strong>
+      </div>
+    </div>
+
+    <div class="connection-details" aria-label="Connection status">
+      <div><span>Microphone</span><strong id="mic-state">Not recording</strong></div>
+      <div><span>Transmission</span><strong id="transfer-state">Not sent</strong></div>
+      <div><span>AI service</span><strong id="system-api">Connecting</strong></div>
+      <div><span>Radio</span><strong>Not connected</strong></div>
+    </div>
+
+    <div class="comms-layout">
+      <section class="control-panel" aria-label="Transmission controls">
+        <div class="section-title"><h2>Transmit</h2></div>
+        <div class="radio-screen">
+          <div class="status-primary">
+            <span class="status-led" id="led" aria-hidden="true"></span>
+            <strong class="screen-state" id="state">STARTING</strong>
+          </div>
+          <p class="screen-sub" id="hint" role="status" aria-live="polite">Checking server</p>
+        </div>
+        <div class="signal-panel" aria-label="Live audio spectrum and input and output level meters">
+          <div class="signal-heading"><span>Signal</span><span data-signal-state>STANDBY</span></div>
+          <canvas class="signal-plot" aria-label="Live frequency spectrum" role="img"></canvas>
+          <div class="signal-levels" aria-label="Audio levels">
+            <div class="signal-level"><span>Input</span><div class="signal-level-track"><div class="signal-level-fill" data-signal-meter="input"></div></div></div>
+            <div class="signal-level"><span>Output</span><div class="signal-level-track"><div class="signal-level-fill" data-signal-meter="output"></div></div></div>
+          </div>
+        </div>
+        <div class="ptt-area">
+          <button type="button" class="ptt" id="ptt" aria-label="Hold to talk" aria-pressed="false" disabled>
+            <svg class="ptt-icon" viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2.5" width="6" height="12" rx="3"/><path d="M5.5 10.5a6.5 6.5 0 0 0 13 0M12 17v4m-4 0h8"/></svg>
+            <span>Hold to talk</span>
+          </button>
+          <p class="control-help">Hold button or Space. Release to send.</p>
+        </div>
+      </section>
+
+      <section class="conversation-panel" aria-label="Conversation">
+        <div class="section-title">
+          <h2>Conversation</h2>
+          <span id="live-indicator">STANDBY</span>
+        </div>
+        <div class="messages" id="messages" aria-live="polite" aria-relevant="additions">
+          <div class="empty"><p>No messages</p></div>
+        </div>
+        <div class="testing">
+          <label for="test-text">Text input</label>
+          <textarea id="test-text" rows="2" maxlength="750" placeholder="Type a message, then hold and release PTT to send."></textarea>
+          <div class="testing-footer">
+            <span id="test-note">Voice requires live mode.</span>
+            <button type="button" id="replay" class="replay" hidden>Replay audio</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="information-section models-panel" aria-label="Active AI model configuration">
+      <div class="section-title"><h2>Model configuration</h2><span id="mode">Connecting</span></div>
+      <div class="models-grid">
+        <div class="stage"><h3>Transcription</h3><strong class="model-id" id="model-transcription">Connecting...</strong></div>
+        <div class="stage"><h3>Response model</h3><strong class="model-id" id="model-response">Connecting...</strong></div>
+        <div class="stage"><h3>Speech synthesis</h3><strong class="model-id" id="model-speech">Connecting...</strong><span>Voice: <span id="model-voice">...</span></span></div>
+      </div>
+      <div class="control-specs" aria-label="Connection limits">
+        <div><span>Recording limit</span><strong id="max-ptt">...</strong></div>
+        <div><span>Maximum upload</span><strong id="max-upload">...</strong></div>
+        <div><span>Audio output</span><strong>Browser speaker</strong></div>
+      </div>
+    </section>
+
+    <section class="information-section telemetry-panel" aria-label="Last exchange technical diagnostics">
+      <div class="section-title"><h2>Last exchange</h2><span id="telemetry-state">No exchange yet</span></div>
+      <div class="telemetry-grid">
+        <div class="telemetry-block">
+          <h3>Processing time</h3>
+          <div class="metric-primary"><strong id="metric-api">...</strong><span>AI pipeline total</span></div>
+          <div class="metric-line"><span>Transcription</span><b id="metric-stt">...</b></div>
+          <div class="metric-line"><span>Model response</span><b id="metric-llm">...</b></div>
+          <div class="metric-line"><span>Speech synthesis</span><b id="metric-tts">...</b></div>
+          <div class="metric-line"><span>Server time</span><b id="metric-server">...</b></div>
+          <div class="metric-line"><span>Browser round trip</span><b id="metric-roundtrip">...</b></div>
+        </div>
+        <div class="telemetry-block">
+          <h3>Input</h3>
+          <div class="metric-primary"><strong id="rx-transport">...</strong><span id="rx-subtitle">Browser recording</span></div>
+          <div class="metric-line"><span>Format</span><b id="rx-format">...</b></div>
+          <div class="metric-line"><span>Duration</span><b id="rx-duration">...</b></div>
+          <div class="metric-line"><span>Size</span><b id="rx-size">...</b></div>
+          <div class="metric-line"><span>Capture rate</span><b id="rx-rate">...</b></div>
+          <div class="metric-line"><span>Channels</span><b id="rx-channels">...</b></div>
+        </div>
+        <div class="telemetry-block">
+          <h3>Output</h3>
+          <div class="metric-primary"><strong id="tx-format">...</strong><span>Speech audio</span></div>
+          <div class="metric-line"><span>Duration</span><b id="tx-duration">...</b></div>
+          <div class="metric-line"><span>Size</span><b id="tx-size">...</b></div>
+          <div class="metric-line"><span>Sample rate</span><b id="tx-rate">...</b></div>
+          <div class="metric-line"><span>Channels</span><b id="tx-channels">...</b></div>
+          <div class="metric-line"><span>Playback</span><b>Browser speaker</b></div>
+        </div>
+        <div class="telemetry-block">
+          <h3>Model usage</h3>
+          <div class="metric-primary"><strong id="tokens-total">...</strong><span>Tokens reported</span></div>
+          <div class="metric-line"><span>Input tokens</span><b id="tokens-input">...</b></div>
+          <div class="metric-line"><span>Output tokens</span><b id="tokens-output">...</b></div>
+          <div class="metric-line"><span>Conversation context</span><b>Last 6 turns</b></div>
+          <div class="metric-line"><span>Response limit</span><b>120 tokens</b></div>
+          <div class="metric-line"><span>Radio transmitter</span><b>Not connected</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="privacy-boundary" aria-label="Current security boundaries">
+      <h2>Connection boundaries</h2>
+      <p>Audio is uploaded when PTT is released. Live mode uses an external OpenAI service through the local server. No RF transmitter, end-to-end encryption, organisation authentication or private model hosting is connected.</p>
+      <span id="footer-mode">Software prototype · RF disconnected</span>
+    </section>
+  </main>
+
+  <footer class="site-footer page-width"><span>Vandskar Advanced Systems</span><a href="/">Home</a></footer>
+</body>
+</html>

@@ -1,0 +1,33 @@
+url: "https://vanskar.com"
+baseurl: ""
+
+permalink: pretty
+title: "Vandskar Advanced Systems"
+description: "Vandskar develops secure communications infrastructure connecting field operators to their organisation's AI models, critical data and decision-support systems."
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-environment-variables
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - LICENSE.md
+  - LICENSE
+  - README.md
+  - hold/
+  - temp/
+  - "*.zip"
+  - app.js
+  - signal.js
+  - app/
+
+

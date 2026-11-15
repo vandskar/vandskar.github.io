@@ -1,0 +1,29 @@
+bifrost/app/static/
+├── app
+│   └── static
+├── app.js
+├── comms.html
+├── hold
+│   ├── comms.html
+│   ├── index.html
+│   └── style.css
+├── images
+│   ├── Screenshot\ 2026-11-14\ at\ 13.55.54.png
+│   ├── graphic_bifrost.bw.dark.png
+│   ├── graphic_bifrost.bw.dark.svg
+│   ├── graphic_bifrost.bw.png
+│   ├── graphic_bifrost.bw.svg
+│   ├── graphic_bifrost_v2.png
+│   └── media_files.txt
+├── index.html
+├── signal.js
+├── site-header.js
+├── style.css
+├── temp
+├── vandskar_shared_header_update.zip
+└── video
+    ├── 12291818-hd_1920_1080_24fps.mp4
+    ├── 13721787-hd_1920_1080_60fps.mp4
+    └── 13721793-hd_1920_1080_60fps.mp4
+
+5 directories, 21 files
