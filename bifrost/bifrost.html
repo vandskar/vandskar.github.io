@@ -8,9 +8,10 @@ permalink: /bifrost/
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f5f2">
-  <meta name="description" content="Bifrost connects people in the field to their organisation's private data and AI intelligence through familiar communications equipment, with organisational control over information, access and deployment.">
+  <meta name="description" content="Bifrost connects people to organisational knowledge and AI through radio communications, clinical tablets and custom operational systems.">
   <title>Bifrost | Vandskar Advanced Systems</title>
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/bifrost-applications.css">
   <script src="/assets/js/site-header.js" defer></script>
 </head>
 
@@ -20,19 +21,116 @@ permalink: /bifrost/
   <main>
     <section class="home-hero page-width" aria-labelledby="product-title">
       <div class="hero-content">
-        <h1 id="product-title">Bifrost.<br>Intelligence over radio.</h1>
+        <h1 id="product-title">Bifrost.<br>Intelligence where you need it.</h1>
         <p>
-          Give your people direct access to your organisation's
-          private knowledge and advanced AI intelligence, wherever
-          they operate. Bifrost connects powerful computing systems
-          to familiar communications equipment, keeping critical
-          information within your organisation's controlled
-          infrastructure while delivering the answers people need
-          at the point of action.
+          Bifrost connects people to their organisation's knowledge,
+          data and AI through familiar, controlled interfaces.
+          By radio, clinical tablet or custom operational systems.
         </p>
-        <a class="primary-link" href="#how-it-works">
-          Explore Bifrost <span aria-hidden="true">↗</span>
-        </a>
+        <nav class="bifrost-application-nav" aria-label="Bifrost applications">
+          <a href="#bifrost-comms">Comms</a>
+          <a href="#bifrost-med">Med</a>
+          <a href="#bifrost-intel">Intel</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Application presentations. Each section combines an application video with a reference graphic where available. -->
+    <section id="bifrost-comms" class="bifrost-application bifrost-application--dark" aria-labelledby="bifrost-comms-title">
+      <div class="page-width bifrost-application__layout">
+        <div class="bifrost-application__media bifrost-application__media--stacked">
+          <div class="bifrost-application__video-frame">
+            <video autoplay muted loop playsinline preload="metadata"
+                   aria-label="Bifrost Comms operations video">
+              <source src="/assets/video/13721787-hd_1920_1080_60fps.mp4" type="video/mp4">
+            </video>
+          </div>
+          <figure class="bifrost-application__graphic-frame">
+            <img
+              src="/assets/images/graphic_bifrost_comms.bw.dark.png"
+              alt="Bifrost Comms schematic showing a radio operator connected through Bifrost to organisational intelligence."
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+        </div>
+        <div class="bifrost-application__copy">
+          <h2 id="bifrost-comms-title">Bifrost Comms.</h2>
+          <p class="bifrost-application__tagline">Intelligence over radio.</p>
+          <p class="bifrost-application__description">
+            Bifrost connects existing professional and military analogue and digital radio systems to organisational AI through compatible audio and push-to-talk interfaces. For users without established communications hardware, we offer an affordable, entry-level licence-free civilian radio configuration.
+          </p>
+          <dl class="bifrost-application__specs" aria-label="Comms reference specifications">
+            <div><dt>Reference radio</dt><dd>Retevis MateTalk P64 · DMR / analogue · IP54</dd></div>
+            <div><dt>RF</dt><dd>PMR446 · 446.0–446.2 MHz · 0.5 W · 16 channels</dd></div>
+            <div><dt>Radio encryption</dt><dd>AES-128 / AES-256 / ARC4 (manufacturer-spec)</dd></div>
+            <div><dt>Audio / PTT</dt><dd>Digirig Mobile 1.11 · K1 · USB audio / RTS</dd></div>
+            <div><dt>AI pipeline</dt><dd>Windows · macOS · Linux · Secure data conversion and integration with organisation-controlled AI environments</dd></div>
+            <div><dt>Operation</dt><dd>PMR446 handhelds: licence-free in CH / much of Europe; computer-controlled and professional RF subject to local requirements</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="bifrost-med" class="bifrost-application bifrost-application--light bifrost-application--reverse" aria-labelledby="bifrost-med-title">
+      <div class="page-width bifrost-application__layout">
+        <div class="bifrost-application__media bifrost-application__media--stacked">
+          <div class="bifrost-application__video-frame">
+            <video autoplay muted loop playsinline preload="metadata"
+                   aria-label="Bifrost Med hospital environment video">
+              <source src="/assets/video/5203512-hd_1920_1080_30fps.mp4" type="video/mp4">
+            </video>
+          </div>
+          <figure class="bifrost-application__graphic-frame">
+            <img
+              src="/assets/images/graphic_bifrost_med.bw.png"
+              alt="Bifrost Med schematic showing a clinician using a tablet connected to hospital intelligence."
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+        </div>
+        <div class="bifrost-application__copy">
+          <h2 id="bifrost-med-title">Bifrost Med.</h2>
+          <p class="bifrost-application__tagline">Clinical intelligence at the point of care.</p>
+          <p class="bifrost-application__description">
+            A wall-mounted tablet brings voice and visual access to hospital-approved
+            knowledge and clinical systems, directly over the hospital network.
+          </p>
+          <dl class="bifrost-application__specs" aria-label="Med proposed specifications">
+            <div><dt>Interface</dt><dd>Tablet · push-to-talk · text</dd></div>
+            <div><dt>Audio</dt><dd>Built-in microphone and speaker</dd></div>
+            <div><dt>Network</dt><dd>Hospital Wi-Fi or wired LAN</dd></div>
+            <div><dt>Data</dt><dd>Protocols · records · laboratories</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="bifrost-intel" class="bifrost-application bifrost-application--dark" aria-labelledby="bifrost-intel-title">
+      <div class="page-width bifrost-application__layout">
+        <div class="bifrost-application__media">
+          <div class="bifrost-application__video-frame">
+            <video autoplay muted loop playsinline preload="metadata"
+                   aria-label="Bifrost Intel operations video">
+              <source src="/assets/video/17060264_1920_1080_60fps.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="bifrost-application__copy">
+          <h2 id="bifrost-intel-title">Bifrost Intel.</h2>
+          <p class="bifrost-application__tagline">Organisational intelligence, directly accessible.</p>
+          <p class="bifrost-application__description">
+            Custom operational interfaces connect teams to their organisation's
+            knowledge, analytical systems and selected AI services.
+          </p>
+          <dl class="bifrost-application__specs" aria-label="Intel proposed specifications">
+            <div><dt>Interface</dt><dd>Browser · custom workstations</dd></div>
+            <div><dt>Deployment</dt><dd>Private · hybrid · approved services</dd></div>
+            <div><dt>Connections</dt><dd>Internal databases and APIs</dd></div>
+            <div><dt>Output</dt><dd>Voice · text · structured responses</dd></div>
+          </dl>
+        </div>
       </div>
     </section>
 
@@ -46,7 +144,7 @@ permalink: /bifrost/
           </h2>
           <figure>
             <img
-              src="/assets/images/graphic_bifrost.bw.png"
+              src="/assets/images/tony-marinescu-fImCPTZ026U-unsplash_crop.jpg"
               alt="Bifrost connects a field operator through a communications bridge to organisation-controlled AI models and critical data."
               loading="lazy"
               decoding="async"
@@ -235,12 +333,25 @@ permalink: /bifrost/
     </section>
 
     <section class="home-section home-section--dark"
-             aria-labelledby="security-title">
-      <div class="page-width home-editorial">
-        <h2 id="security-title">
-          Intelligence stays protected.
-          People stay connected.
-        </h2>
+         aria-labelledby="security-title">
+  <div class="page-width home-editorial">
+    <div>
+      <h2 id="security-title">
+        Intelligence stays protected.
+        People stay connected.
+      </h2>
+
+      <figure>
+        <img
+          src="/assets/images/valentin-lacoste-ufT32_VFS-I-unsplash.jp2"
+          alt="Secure infrastructure supporting protected organisational data and communications."
+          loading="lazy"
+          decoding="async"
+        >
+      </figure>
+    </div>
+
+    <div class="home-copy">
 
         <div class="home-copy">
           <p>
@@ -345,7 +456,7 @@ permalink: /bifrost/
         <p class="closing-note">
           Deployment arrangements depend on the organisation's
           infrastructure, compatible communications equipment,
-          security requirements and validated integrations.
+          security requirements and system compatibility.
           Confidential communication and information
           protection implemented in each deployment.
         </p>
@@ -356,4 +467,3 @@ permalink: /bifrost/
   {% include site-footer.html %}
 </body>
 </html>
-

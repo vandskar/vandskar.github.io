@@ -1,0 +1,214 @@
+/* Bifrost application panels only. The shared site and console styles stay unchanged. */
+.page-product .bifrost-application-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(20px, 3vw, 42px);
+}
+
+.page-product .bifrost-application-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 0;
+  border-bottom: 1px solid currentColor;
+  color: var(--colour-ink);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 560;
+}
+
+.page-product .bifrost-application-nav a:hover {
+  opacity: .66;
+}
+
+.page-product .bifrost-application {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 72px);
+  min-height: calc(100svh - 72px);
+  padding-block: clamp(70px, 8vh, 112px);
+  scroll-margin-top: 24px;
+}
+
+.page-product .bifrost-application--dark {
+  background: var(--colour-dark-surface);
+  color: var(--colour-white);
+}
+
+.page-product .bifrost-application--light {
+  background: var(--colour-white);
+  color: var(--colour-ink);
+}
+
+.page-product .bifrost-application__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.23fr) minmax(0, .9fr);
+  grid-template-areas: "media content";
+  align-items: center;
+  gap: clamp(40px, 5.7vw, 104px);
+}
+
+.page-product .bifrost-application--reverse .bifrost-application__layout {
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.23fr);
+  grid-template-areas: "content media";
+}
+
+.page-product .bifrost-application__media {
+  grid-area: media;
+  min-width: 0;
+}
+
+.page-product .bifrost-application__media--stacked {
+  display: grid;
+  gap: 18px;
+}
+
+.page-product .bifrost-application__video-frame,
+.page-product .bifrost-application__graphic-frame {
+  overflow: hidden;
+}
+
+.page-product .bifrost-application__video-frame {
+  aspect-ratio: 16 / 9;
+  background: #202027;
+}
+
+.page-product .bifrost-application__graphic-frame {
+  margin: 0;
+}
+
+.page-product .bifrost-application--light .bifrost-application__video-frame {
+  background: var(--colour-surface-soft);
+}
+
+.page-product .bifrost-application__video-frame video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-product .bifrost-application__graphic-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-product .bifrost-application__copy {
+  grid-area: content;
+  min-width: 0;
+  max-width: 510px;
+}
+
+.page-product .bifrost-application__copy h2 {
+  font-size: clamp(36px, 3.4vw, 54px);
+  font-weight: 615;
+  line-height: 1.1;
+  letter-spacing: -.045em;
+  margin: 0 0 13px;
+}
+
+.page-product .bifrost-application__tagline {
+  font-size: clamp(19px, 1.7vw, 25px);
+  line-height: 1.3;
+  letter-spacing: -.025em;
+  margin: 0 0 23px;
+}
+
+.page-product .bifrost-application__description {
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 30px;
+  color: var(--colour-editorial-copy);
+}
+
+.page-product .bifrost-application--dark .bifrost-application__description {
+  color: var(--colour-dark-copy);
+}
+
+.page-product .bifrost-application__specs {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.page-product .bifrost-application__specs > div {
+  display: grid;
+  grid-template-columns: minmax(110px, .55fr) minmax(0, 1fr);
+  gap: 13px;
+  padding-block: 12px;
+  border-top: 1px solid var(--colour-border);
+}
+
+.page-product .bifrost-application--dark .bifrost-application__specs > div {
+  border-color: #3a393f;
+}
+
+.page-product .bifrost-application__specs dt {
+  color: var(--colour-text-muted);
+}
+
+.page-product .bifrost-application--dark .bifrost-application__specs dt {
+  color: var(--colour-dark-note);
+}
+
+.page-product .bifrost-application__specs dd {
+  min-width: 0;
+  margin: 0;
+  font-weight: 540;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 950px) {
+  .page-product .bifrost-application {
+    min-height: 0;
+  }
+
+  .page-product .bifrost-application__layout,
+  .page-product .bifrost-application--reverse .bifrost-application__layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "media" "content";
+    gap: 36px;
+  }
+
+  .page-product .bifrost-application__media--stacked {
+    gap: 14px;
+  }
+
+  .page-product .bifrost-application__video-frame {
+    max-height: none;
+  }
+
+  .page-product .bifrost-application__copy {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-product .bifrost-application {
+    padding-block: 64px;
+  }
+
+  .page-product .bifrost-application__layout,
+  .page-product .bifrost-application--reverse .bifrost-application__layout {
+    gap: 28px;
+  }
+
+  .page-product .bifrost-application__copy h2 {
+    font-size: clamp(32px, 8vw, 43px);
+  }
+
+  .page-product .bifrost-application__tagline {
+    font-size: 20px;
+  }
+
+  .page-product .bifrost-application__specs > div {
+    grid-template-columns: minmax(94px, .45fr) minmax(0, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-product .bifrost-application-nav a { transition: none; }
+}

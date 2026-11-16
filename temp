@@ -1,29 +1,82 @@
-bifrost/app/static/
-├── app
-│   └── static
-├── app.js
-├── comms.html
-├── hold
+.
+├── CNAME
+├── Gemfile
+├── Gemfile.lock
+├── _config.yml
+├── _data
+│   └── contact.yml
+├── _includes
+│   └── site-footer.html
+├── _site
+│   ├── about
+│   │   └── index.html
+│   ├── assets
+│   │   ├── css
+│   │   │   └── style.css
+│   │   ├── images
+│   │   │   ├── graphic_bifrost.bw.dark.png
+│   │   │   ├── graphic_bifrost.bw.dark.svg
+│   │   │   ├── graphic_bifrost.bw.png
+│   │   │   ├── graphic_bifrost.bw.svg
+│   │   │   ├── graphic_bifrost_v2.png
+│   │   │   └── media_files.txt
+│   │   ├── js
+│   │   │   ├── app.js
+│   │   │   ├── signal.js
+│   │   │   └── site-header.js
+│   │   └── video
+│   │       ├── 12291818-hd_1920_1080_24fps.mp4
+│   │       ├── 13721787-hd_1920_1080_60fps.mp4
+│   │       └── 13721793-hd_1920_1080_60fps.mp4
+│   ├── bifrost
+│   │   └── index.html
 │   ├── comms.html
+│   ├── contact
+│   │   └── index.html
 │   ├── index.html
-│   └── style.css
-├── images
-│   ├── Screenshot\ 2026-11-14\ at\ 13.55.54.png
-│   ├── graphic_bifrost.bw.dark.png
-│   ├── graphic_bifrost.bw.dark.svg
-│   ├── graphic_bifrost.bw.png
-│   ├── graphic_bifrost.bw.svg
-│   ├── graphic_bifrost_v2.png
-│   └── media_files.txt
+│   ├── jek.sh
+│   ├── kill_serve.sh
+│   ├── legal
+│   │   └── index.html
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── temp
+├── about.html
+├── assets
+│   ├── css
+│   │   └── style.css
+│   ├── images
+│   │   ├── graphic_bifrost.bw.dark.png
+│   │   ├── graphic_bifrost.bw.dark.svg
+│   │   ├── graphic_bifrost.bw.png
+│   │   ├── graphic_bifrost.bw.svg
+│   │   ├── graphic_bifrost_v2.png
+│   │   ├── media_files.txt
+│   │   ├── troubleshooting
+│   │   │   ├── 644781630_826213223824557_8933158069671675495_n.jpg
+│   │   │   ├── 644855688_826213257157887_2425485372175844174_n.jpg
+│   │   │   ├── 645636979_826216510490895_2260308443770315021_n.jpg
+│   │   │   ├── 645904484_826213260491220_656678127459604292_n.jpg
+│   │   │   └── 646165889_826213250491221_7246457145470798094_n.jpg
+│   │   └── troubleshooting-700x350.jpg
+│   ├── js
+│   │   ├── app.js
+│   │   ├── signal.js
+│   │   └── site-header.js
+│   └── video
+│       ├── 12291818-hd_1920_1080_24fps.mp4
+│       ├── 13721787-hd_1920_1080_60fps.mp4
+│       └── 13721793-hd_1920_1080_60fps.mp4
+├── bifrost
+│   └── bifrost.html
+├── comms.html
+├── contact.html
 ├── index.html
-├── signal.js
-├── site-header.js
-├── style.css
+├── jek.sh
+├── kill_serve.sh
+├── legal.html
+├── robots.txt
 ├── temp
-├── vandskar_shared_header_update.zip
-└── video
-    ├── 12291818-hd_1920_1080_24fps.mp4
-    ├── 13721787-hd_1920_1080_60fps.mp4
-    └── 13721793-hd_1920_1080_60fps.mp4
+└── tep
 
-5 directories, 21 files
+19 directories, 60 files
